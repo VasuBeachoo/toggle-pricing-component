@@ -11,7 +11,9 @@ const Name = styled.p``;
 
 const Price = styled.h1``;
 
-const Divider = styled.hr``;
+const Divider = styled.hr`
+  width: 100%;
+`;
 
 const Feature = styled.p``;
 
@@ -26,9 +28,9 @@ function renderFeatures(features) {
   ));
 }
 
-const Plan = ({ name, price, features }) => {
+const Plan = ({ className, name, price, features }) => {
   return (
-    <Container>
+    <Container className={className}>
       <Name>{name}</Name>
       <Price>{price}</Price>
       <Divider />
