@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Label = styled.p``;
 

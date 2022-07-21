@@ -3,11 +3,21 @@ import GlobalStyle from "./GlobalStyle";
 import Toggle from "./components/Toggle";
 import Plan from "./components/Plan";
 
-const AppContainer = styled.div``;
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+`;
 
 const AppHeading = styled.div``;
 
-const Plans = styled.div``;
+const Plans = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 
 const plans = [
   {
