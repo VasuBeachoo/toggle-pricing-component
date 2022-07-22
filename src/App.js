@@ -3,12 +3,15 @@ import styled from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import Toggle from "./components/Toggle";
 import Plan from "./components/Plan";
+import topBgImg from "./assets/bg-top.svg";
+import bottomBgImg from "./assets/bg-bottom.svg";
 
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  min-height: 100vh;
   padding: 3.5rem 2rem 4rem;
 `;
 
@@ -16,10 +19,12 @@ const AppHeading = styled.div`
   color: var(--Grayish-Blue);
   font-size: 1.6rem;
   margin: 0 0 1.5rem;
+  z-index: 1;
 `;
 
 const PlanToggle = styled(Toggle)`
   margin: 0 0 2.75rem;
+  z-index: 1;
 `;
 
 const Plans = styled.div`
@@ -35,6 +40,20 @@ const Plans = styled.div`
     align-items: stretch;
     gap: 2rem;
   }
+`;
+
+const TopBgImg = styled.img`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: max(20vw, 20vh);
+`;
+
+const BottomBgImg = styled.img`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: max(20vw, 30vh);
 `;
 
 const plans = [
@@ -89,6 +108,8 @@ const App = () => {
         setMonthly={setMonthly}
       />
       <Plans>{renderPlans(plans, monthly)}</Plans>
+      <TopBgImg src={topBgImg} alt="background-top" />
+      <BottomBgImg src={bottomBgImg} alt="background-bottom" />
     </AppContainer>
   );
 };
