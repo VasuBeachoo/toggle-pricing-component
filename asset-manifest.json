@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/toggle-pricing-component/static/js/main.00cb851f.js",
+    "static/media/bg-bottom.svg": "/toggle-pricing-component/static/media/bg-bottom.0ed1debdb05aee57e642783500eaeec9.svg",
+    "static/media/bg-top.svg": "/toggle-pricing-component/static/media/bg-top.4980c1fd1180f71d57826caf727e057c.svg",
+    "index.html": "/toggle-pricing-component/index.html",
+    "main.00cb851f.js.map": "/toggle-pricing-component/static/js/main.00cb851f.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.00cb851f.js"
+  ]
+}
