@@ -29,7 +29,6 @@ const Plans = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 1rem;
 `;
 
 const plans = [
@@ -57,8 +56,11 @@ const plans = [
 ];
 
 function renderPlans(plans, monthly) {
+  let key = 0;
+
   return plans.map((plan) => (
     <Plan
+      key={key++}
       name={plan.name}
       price={monthly ? plan.monthlyPrice : plan.annuallyPrice}
       features={plan.features}

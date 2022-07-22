@@ -6,11 +6,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  transition: 0.2s;
-
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 const Label = styled.p`
@@ -20,6 +15,7 @@ const Label = styled.p`
 `;
 
 const Bg = styled.div`
+  user-select: none;
   display: flex;
   flex-direction: row;
   justify-content: ${(props) => (props.monthly ? "flex-end" : "flex-start")};
@@ -33,6 +29,7 @@ const Bg = styled.div`
   transition: 0.2s;
 
   &:hover {
+    cursor: pointer;
     background-color: var(--Light-Violet);
   }
 `;
@@ -46,9 +43,9 @@ const Circle = styled.div`
 
 const Toggle = ({ className, leftLabel, rightLabel, monthly, setMonthly }) => {
   return (
-    <Container className={className} onClick={() => setMonthly(!monthly)}>
+    <Container className={className}>
       <Label>{leftLabel}</Label>
-      <Bg monthly={monthly}>
+      <Bg monthly={monthly} onClick={() => setMonthly(!monthly)}>
         <Circle />
       </Bg>
       <Label>{rightLabel}</Label>
