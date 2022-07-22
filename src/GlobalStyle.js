@@ -20,6 +20,7 @@ const GlobalStyle = styled.createGlobalStyle`
   }
 
   body {
+    background-color: var(--Very-Light-Grayish-Blue);
     font-family: var(--font);
     font-weight: 700;
     margin: 0;

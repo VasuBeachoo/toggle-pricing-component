@@ -9,7 +9,6 @@ const AppContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--Very-Light-Grayish-Blue);
   padding: 3.5rem 2rem 4rem;
 `;
 
@@ -29,6 +28,13 @@ const Plans = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2rem;
+  }
 `;
 
 const plans = [

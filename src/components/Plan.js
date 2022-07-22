@@ -18,6 +18,11 @@ const Container = styled.div`
   padding: 2.5rem;
   margin: 0 -0.2rem;
   z-index: ${(props) => (props.primary ? 2 : 1)};
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    margin: 0;
+  }
 `;
 
 const Name = styled.p`
