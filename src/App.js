@@ -9,17 +9,17 @@ const AppContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   background-color: var(--Very-Light-Grayish-Blue);
-  padding: 3.5rem;
+  padding: 4rem 2rem 4.5rem;
 `;
 
 const AppHeading = styled.div`
   color: var(--Grayish-Blue);
   font-size: 1.6rem;
-  margin: 1rem 0 1.75rem;
+  margin: 0 0 1.5rem;
 `;
 
 const PlanToggle = styled(Toggle)`
-  margin: 0 0 2rem;
+  margin: 0 0 2.75rem;
 `;
 
 const Plans = styled.div`
@@ -27,24 +27,26 @@ const Plans = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  gap: 1rem;
 `;
 
 const plans = [
   {
     name: "Basic",
-    price: "$19.99",
+    monthlyPrice: "19.99",
     features: ["500 GB Storage", "2 Users Allowed", "Send up to 3 GB"],
     primary: false,
   },
   {
     name: "Professional",
-    price: "$24.99",
+    monthlyPrice: "24.99",
     features: ["1 TB Storage", "5 Users Allowed", "Send up to 10 GB"],
     primary: true,
   },
   {
     name: "Master",
-    price: "$39.99",
+    monthlyPrice: "39.99",
     features: ["2 TB Storage", "10 Users Allowed", "Send up to 20 GB"],
     primary: false,
   },
@@ -52,7 +54,7 @@ const plans = [
 
 function renderPlans(plans) {
   return plans.map((plan) => (
-    <Plan name={plan.name} price={plan.price} features={plan.features} />
+    <Plan name={plan.name} price={plan.monthlyPrice} features={plan.features} />
   ));
 }
 

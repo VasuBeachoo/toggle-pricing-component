@@ -6,12 +6,17 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Label = styled.p`
   color: var(--Light-Grayish-Blue);
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.02rem;
 `;
 
 const Bg = styled.div`
@@ -23,6 +28,7 @@ const Bg = styled.div`
   height: 1.65rem;
   background-color: var(--Light-Violet);
   border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   padding: 0 0.25rem;
 `;
 
