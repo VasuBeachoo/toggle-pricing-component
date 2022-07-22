@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import Toggle from "./components/Toggle";
@@ -59,11 +60,18 @@ function renderPlans(plans) {
 }
 
 const App = () => {
+  const [toggle, setToggle] = useState("monthly");
+
   return (
     <AppContainer>
       <GlobalStyle />
       <AppHeading>Our Pricing</AppHeading>
-      <PlanToggle leftLabel="Annually" rightLabel="Monthly" />
+      <PlanToggle
+        leftLabel="Annually"
+        rightLabel="Monthly"
+        toggle={toggle}
+        setToggle={setToggle}
+      />
       <Plans>{renderPlans(plans)}</Plans>
     </AppContainer>
   );

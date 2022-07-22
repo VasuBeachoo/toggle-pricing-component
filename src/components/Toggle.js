@@ -22,7 +22,13 @@ const Label = styled.p`
 const Bg = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: ${(props) => {
+    if (props.toggle === "monthly") {
+      return "flex-end";
+    } else if (props.toggle === "annually") {
+      return "flex-start";
+    }
+  }};
   align-items: center;
   width: 3rem;
   height: 1.65rem;
@@ -39,11 +45,19 @@ const Circle = styled.div`
   border-radius: 100%;
 `;
 
-const Toggle = ({ className, leftLabel, rightLabel }) => {
+function switchToggle(toggle, setToggle) {
+  if (toggle === "monthly") setToggle("annually");
+  else if (toggle === "annually") setToggle("monthly");
+}
+
+const Toggle = ({ className, leftLabel, rightLabel, toggle, setToggle }) => {
   return (
-    <Container className={className}>
+    <Container
+      className={className}
+      onClick={() => switchToggle(toggle, setToggle)}
+    >
       <Label>{leftLabel}</Label>
-      <Bg>
+      <Bg toggle={toggle}>
         <Circle />
       </Bg>
       <Label>{rightLabel}</Label>
