@@ -22,20 +22,19 @@ const Label = styled.p`
 const Bg = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: ${(props) => {
-    if (props.toggle === "monthly") {
-      return "flex-end";
-    } else if (props.toggle === "annually") {
-      return "flex-start";
-    }
-  }};
+  justify-content: ${(props) => (props.monthly ? "flex-end" : "flex-start")};
   align-items: center;
   width: 3rem;
   height: 1.65rem;
-  background-color: var(--Light-Violet);
+  background-color: var(--Violet);
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   padding: 0 0.25rem;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: var(--Light-Violet);
+  }
 `;
 
 const Circle = styled.div`
@@ -45,19 +44,11 @@ const Circle = styled.div`
   border-radius: 100%;
 `;
 
-function switchToggle(toggle, setToggle) {
-  if (toggle === "monthly") setToggle("annually");
-  else if (toggle === "annually") setToggle("monthly");
-}
-
-const Toggle = ({ className, leftLabel, rightLabel, toggle, setToggle }) => {
+const Toggle = ({ className, leftLabel, rightLabel, monthly, setMonthly }) => {
   return (
-    <Container
-      className={className}
-      onClick={() => switchToggle(toggle, setToggle)}
-    >
+    <Container className={className} onClick={() => setMonthly(!monthly)}>
       <Label>{leftLabel}</Label>
-      <Bg toggle={toggle}>
+      <Bg monthly={monthly}>
         <Circle />
       </Bg>
       <Label>{rightLabel}</Label>
